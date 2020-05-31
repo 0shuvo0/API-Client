@@ -73,6 +73,9 @@ if(d){
 }
 
 function submit(){
+	if(!endpoint.value.trim()){
+		return
+	}
 	resContainer.style.display = "block"
 	resContainer.innerText = "Loading ..."
 	var $headers = {}
@@ -130,11 +133,13 @@ saveBtn.addEventListener('click', function(){
 	}, 2000)
 })
 
-
-document.querySelector('textarea').addEventListener('keydown', function(){
-	this.style.height = "auto"
-	this.style.height = this.scrollHeight + "px"
-}) 
+var textareas = document.querySelectorAll('textarea')
+for(var i = 0; i < textareas.length; i++){
+	textareas[i].addEventListener('keydown', function(){
+		this.style.height = "auto"
+		this.style.height = this.scrollHeight + "px"
+	})
+}
 
 
 submitBtn.addEventListener("click", submit)
