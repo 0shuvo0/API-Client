@@ -1,0 +1,220 @@
+:root{
+	--primary: #000;
+	--primary-light: #0D0D0D;
+	--light: #1A1A1A;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'Poppins',Arial,sans-serif;
+	background-color: #333333;
+}
+a{
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+a:hover,button:hover{
+	cursor: pointer;
+}
+input, button, textarea, select{
+	border: none;
+	outline: none;
+}
+
+
+
+
+.navbar{
+	height: 55px;
+	background-color: var(--primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.2em;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.navbar a{
+	color: #fff;
+}
+.navbar i{
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+	transition: background-color 0.1s;
+}
+.navbar i:hover{
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.side-menu-wrapper{
+	position: fixed;
+	top: 0;
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.01);
+	transition: left 0.4s;
+	left: -100%;
+}
+.side-menu-wrapper.active{
+	left: 0;
+}
+.side-menu-wrapper .side-menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 300px;
+	background: #fff;
+	box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+}
+.side-menu .nav-item{
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	padding: 0 20px;
+	font-size: 1.1em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-left: 5px solid #fff;
+	margin: 10px 0;
+	color: #2E2E2E;
+	transition: border-left 0.2s;
+}
+.side-menu .nav-item:hover{
+	border-left: 5px solid #1A1A1A;
+}
+.side-menu .nav-item i{
+	width: 25px;
+}
+
+
+.container{
+	padding: 0 15vw;
+}
+
+
+.endpoint-form{
+	margin-top: 10px;
+	display: flex;
+	height: 40px;
+	background-color: var(--light);
+	border-radius: 2px;
+	overflow: hidden;
+}
+.endpoint-form input{
+	flex-grow: 1;
+	padding: 10px;
+	color: #fff;
+	font-size: 16px;
+	background-color: transparent;
+}
+.endpoint-form input::placeholder{
+	color: rgba(255, 255, 255, 0.8);
+}
+.btn, .endpoint-form select{
+	padding: 0 15px;
+	background-color: var(--primary);
+	color: #fff;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	box-shadow: -1px 0 5px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s;
+}
+.btn:hover{
+	background-color: var(--primary-light);
+}
+.send-btn{
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-radius: 3px;
+	font-size: 16px;
+}
+
+
+
+.body .form{
+	background-color: var(--light);
+	border-radius: 3px;
+	overflow: hidden;
+	margin: 10px 0;
+}
+.form p{
+	padding: 0 10px;
+	color: #fff;
+	margin-top: 10px;
+	font-size: 18px;
+}
+.form textarea{
+	width: 100%;
+	padding: 10px;
+	color: #fff;
+	background-color: transparent;
+}
+textarea::placeholder{
+	color: rgba(255, 255, 255, 0.8);
+}
+
+
+#res{
+	padding: 10px;
+	color: #fff;
+	display: none;
+}
+
+
+
+
+.toast{
+	position:  fixed;
+	bottom: 60px;
+	right: 0;
+	color: #fff;
+	z-index: 9;
+	font-size: 16px;
+	line-height: 18px;
+	width: 170px;
+	padding: 10px 15px;
+	border-radius: 3px 0 0 3px;
+	background: linear-gradient(#FF1F16, #E10700);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.15);
+	animation: toast 3s;
+	transform: translateX(100%);
+	opacity: 0;
+}
+@keyframes toast{
+	0%, 100%{
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	15%, 85%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+
+
+@media(max-width: 600px){
+	.container{
+		padding: 0 6vw;
+	}
+}
+@media(max-width: 400px){
+	.container{
+		padding: 0 3vw;
+	}
+}

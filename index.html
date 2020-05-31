@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="author" content="MdShuvo">
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>API Client</title>
+</head>
+<body>
+	<div class="navbar container">
+		<a href="#">API Client</a>
+		<i class="fas fa-bars"></i>
+	</div>
+	
+	<div class="side-menu-wrapper">
+		<div class="side-menu"></div>
+	</div>
+	
+	<div class="container">
+		<div class="endpoint-form">
+			<input type="text" placeholder="Endpoint base url" id="endpoint">
+			<button class="btn" id="saveBtn">save</butto>
+		</div>
+		<div class="body">
+			<div class="endpoint-form">
+				<input type="text" placeholder="/path" id="path">
+				<select id="reqType">
+					<option value="get">GET</option>
+					<option value="post">POST</option>
+					<option value="put">PUT</option>
+					<option value="delete">DELETE</option>
+				</select>
+			</div>
+			<div class="form">
+				<p>Headers</p>
+				<textarea id="headers">{}</textarea>
+			</div>
+			<div class="form">
+				<p>Request body</p>
+				<textarea id="body">{}</textarea>
+			</div>
+			<p class="form" id="res"></p>
+			<button class="btn send-btn" id="submitBtn">send</button>
+		</div>
+	</div>
+
+<script src="js/axios.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+ 
